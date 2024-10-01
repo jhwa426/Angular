@@ -39,6 +39,7 @@ import { CommonModule } from "@angular/common";
 
                     <label for="email">Email</label>
                     <input id="email" type="email" formControlName="email">
+                    
                     <button type="submit" class="primary">Apply now</button>
                 </form> 
             </section>
