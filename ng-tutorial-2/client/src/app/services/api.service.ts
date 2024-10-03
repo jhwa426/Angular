@@ -10,9 +10,7 @@ import { Options } from "../../type";
 
 export class ApiService {
 
-    constructor(
-        private httpClient: HttpClient
-    ) { }
+    constructor(private httpClient: HttpClient) { }
 
     // Declare communicate with the server
     get<T>(url: string, options: Options): Observable<T> {
