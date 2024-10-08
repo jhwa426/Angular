@@ -4,7 +4,7 @@
 
     <!-- Navigation -->
     <div class="row gap-1">
-
-        <!-- <a routerLink="/about-us" routerLinkActive="active">About</a> -->
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/about-us" routerLinkActive="active">About</a>
     </div>
 </header>
