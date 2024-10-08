@@ -14,4 +14,12 @@
     <!-- Product Rating (PrimeNg rating component) -->
     <p-rating [(ngModel)]="product.rating" [readonly]="true" iconCancelClass="hidden"></p-rating>
 
+
+    <!-- Action buttons -->
+    <div class="row gap-05">
+        <button type="button" pButton icon="pi pi-pencil" (click)="editProduct()" label="Edit"></button>
+        <button type="button" pButton icon="pi pi-trash" (click)="deleteProduct()" label="Delete"
+            class="p-button-danger" #deleteButton>
+        </button>
+    </div>
 </div>
