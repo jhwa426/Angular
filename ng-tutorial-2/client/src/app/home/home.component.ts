@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ProductsService } from "../services/products.service";
 import { Product, Products } from "../../type";
 import { ProductComponent } from "../components/product/product.component";
 import { CommonModule } from "@angular/common";
-import { PaginatorModule } from 'primeng/paginator';
+import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from "../components/edit-popup/edit-popup.component";
 import { ButtonModule } from 'primeng/button';
 
@@ -18,6 +18,8 @@ import { ButtonModule } from 'primeng/button';
 
 export class HomeComponent {
     constructor(private productsService: ProductsService) { }
+
+    @ViewChild('paginator') paginator: Paginator | undefined;
 
     products: Product[] = [];
 
@@ -75,6 +77,10 @@ export class HomeComponent {
         this.fetchProduct(event.page, event.rows);
     }
 
+    resetPaginator() {
+        this.paginator?.changePage(0);
+    }
+
     fetchProduct(page: number, perPage: number) {
         this.productsService
             .getProducts("http://localhost:3000/clothes", { page, perPage })
@@ -103,6 +109,7 @@ export class HomeComponent {
                 next: (data) => {
                     console.log(data);
                     this.fetchProduct(0, this.rows);
+                    this.resetPaginator();
                 },
                 error: (error) => {
                     console.log(error);
@@ -117,6 +124,7 @@ export class HomeComponent {
                 next: (data) => {
                     console.log(data);
                     this.fetchProduct(0, this.rows);
+                    this.resetPaginator();
                 },
                 error: (error) => {
                     console.log(error);
@@ -131,6 +139,7 @@ export class HomeComponent {
                 next: (data) => {
                     console.log(data);
                     this.fetchProduct(0, this.rows);
+                    this.resetPaginator();
                 },
                 error: (error) => {
                     console.log(error);
