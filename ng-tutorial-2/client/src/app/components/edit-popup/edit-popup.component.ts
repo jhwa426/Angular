@@ -27,13 +27,20 @@ export class EditPopupComponent {
     constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
-        // Initialize the form inside ngOnInit
+        // Initialise the form inside ngOnInit
         this.productForm = this.formBuilder.group({
             name: ['', [Validators.required, this.specialCharacterValidator()]],
             image: [''],
             price: ['', [Validators.required]],
             rating: [0],
         });
+
+        // this.productForm.patchValue({
+        //     name: this.product.name,
+        //     image: this.product.image,
+        //     price: this.product.price,
+        //     rating: this.product.rating,
+        // });
     }
 
     @Input() display: boolean = false;
