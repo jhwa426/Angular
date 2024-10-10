@@ -135,3 +135,13 @@ Before you begin, ensure you have the following installed:
 This project is licensed under the MIT License.
 
 </details>
+
+## Angular Tutorial - 3 : E-commerce Store
+
+<details>
+
+### Web Shop
+
+Build a webshop or e-commerce store using Angular/TypeScript, Express.js, and Stripe.
+
+</details>
