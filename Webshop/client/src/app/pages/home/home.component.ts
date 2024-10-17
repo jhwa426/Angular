@@ -13,5 +13,10 @@ import { ProductsHeaderComponent } from "./components/products-header/products-h
 
 
 export class HomeComponent {
+    cols = 3;
+
+    onColumnsCountChange(colsNum: number): void {
+        this.cols = colsNum;
+    }
 
 }
