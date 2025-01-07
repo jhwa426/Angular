@@ -4,7 +4,7 @@
 
 ## Technical Skills 💻
 
-<img align="left" alt="Technical Skills" height="50px" src="https://skillicons.dev/icons?i=html,css,js,ts,angular,git"/>
+<img align="left" alt="Technical Skills" height="50px" src="https://skillicons.dev/icons?i=angular,ts,js,scss,html,css,git"/>
 
 <br />
 <br />
