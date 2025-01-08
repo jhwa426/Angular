@@ -1,4 +1,5 @@
-import { Component, EventEmitter, input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { Color } from '../../../types/app.types';
 
 @Component({
   selector: 'app-button',
@@ -8,6 +9,12 @@ import { Component, EventEmitter, input, output } from '@angular/core';
 })
 export class ButtonComponent {
   text = input.required<'Close' | 'Add'>();
-  color = input<'red' | 'grean'>();
-  // btnClick = output<void>(new EventEmitter<void>());
+  color = input<Color>();
+  btnClick = output();
+
+  constructor() {}
+
+  onClick() {
+    this.btnClick.emit();
+  }
 }
