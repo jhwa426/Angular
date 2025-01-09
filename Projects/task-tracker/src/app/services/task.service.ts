@@ -30,4 +30,17 @@ export class TaskService {
     TASKS.push(task);
     return of(TASKS);
   }
+
+  // Update Task Reminder
+  updateTaskRemider(task: Task): Observable<Task[]> {
+    const updatedTasks = TASKS.map((t) =>
+      t.id === task.id
+        ? {
+            ...t,
+            reminder: !t.reminder,
+          }
+        : t
+    );
+    return of(updatedTasks);
+  }
 }
