@@ -1,0 +1,8 @@
+<div>
+  @for (task of tasks; track $index) {
+  <app-task-item
+    [task]="task"
+    (onDeleteTask)="deleteTask(task)"
+  ></app-task-item>
+  }
+</div>
