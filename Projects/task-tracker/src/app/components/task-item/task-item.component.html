@@ -1,0 +1,15 @@
+<div
+  class="task"
+  [class]="{ reminder: task().reminder }"
+  (dblclick)="onToggle(task())"
+>
+  <h3>
+    {{ task().text }}
+    <fa-icon
+      (click)="onDelete(task())"
+      [icon]="faTimes"
+      [style]="{ color: 'red' }"
+    ></fa-icon>
+  </h3>
+  <p>{{ task().day }}</p>
+</div>
