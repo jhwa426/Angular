@@ -21,16 +21,6 @@ export class TaskService {
     return of(updatedTasks);
   }
 
-  //Add Task
-  addTask(task: Task): Observable<Task[]> {
-    const newTask = {
-      id: TASKS.length + 1,
-      ...task,
-    };
-    TASKS.push(task);
-    return of(TASKS);
-  }
-
   // Update Task Reminder
   updateTaskRemider(task: Task): Observable<Task[]> {
     const updatedTasks = TASKS.map((t) =>
@@ -42,5 +32,15 @@ export class TaskService {
         : t
     );
     return of(updatedTasks);
+  }
+
+  //Add Task
+  addTask(task: Task): Observable<Task[]> {
+    const newTask = {
+      id: TASKS.length + 1,
+      ...task,
+    };
+    // TASKS.push(task);
+    return of(TASKS);
   }
 }
