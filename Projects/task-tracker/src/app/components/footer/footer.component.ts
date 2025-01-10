@@ -2,18 +2,19 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-footer',
   imports: [],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
 })
-export class AboutComponent implements OnInit {
+export class FooterComponent implements OnInit {
   private router = inject(Router);
 
   constructor() {}
 
-  goBack() {
-    this.router.navigate(['/']);
+  goToAbout() {
+    this.router.navigate(['/about']);
   }
+
   ngOnInit(): void {}
 }

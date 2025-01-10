@@ -3,11 +3,10 @@ import { Task } from '../../../types/app.types';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { TaskService } from '../../services/task.service';
 import { AddTaskComponent } from '../add-task/add-task.component';
-import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskItemComponent, AddTaskComponent, HeaderComponent],
+  imports: [TaskItemComponent, AddTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })
