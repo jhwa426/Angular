@@ -1,92 +1,99 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DialogModule } from 'primeng/dialog';
+import {Component, EventEmitter, input, Input, Output} from '@angular/core';
+import {DialogModule} from 'primeng/dialog';
 
-import { FormBuilder, FormsModule, ReactiveFormsModule, ValidatorFn, Validators, } from '@angular/forms';
-import { RatingModule } from 'primeng/rating';
-import { ButtonModule } from 'primeng/button';
-import { Product } from "../../../type";
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
+import {RatingModule} from 'primeng/rating';
+import {ButtonModule} from 'primeng/button';
+import {Product} from '../../../type';
 
 @Component({
-    selector: 'app-edit-popup',
-    standalone: true,
-    imports: [
-        DialogModule,
-        CommonModule,
-        FormsModule,
-        RatingModule,
-        ButtonModule,
-        ReactiveFormsModule,
-    ],
-    templateUrl: './edit-popup.component.html',
-    styleUrl: './edit-popup.component.scss',
+  selector: 'app-edit-popup',
+  standalone: true,
+  imports: [
+    DialogModule,
+    FormsModule,
+    RatingModule,
+    ButtonModule,
+    ReactiveFormsModule,
+  ],
+  templateUrl: './edit-popup.component.html',
+  styleUrl: './edit-popup.component.scss',
 })
 export class EditPopupComponent {
-    productForm: any;
+  productForm: any;
 
-    constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
-    ngOnInit() {
-        // Initialise the form inside ngOnInit
-        this.productForm = this.formBuilder.group({
-            name: ['', [Validators.required, this.specialCharacterValidator()]],
-            image: [''],
-            price: ['', [Validators.required]],
-            rating: [0],
-        });
+  ngOnInit() {
+    // Initialise the form inside ngOnInit
+    this.productForm = this.formBuilder.group({
+      name: ['', [Validators.required, this.specialCharacterValidator()]],
+      image: [''],
+      price: ['', [Validators.required]],
+      rating: [0],
+    });
 
-        // this.productForm.patchValue({
-        //     name: this.product.name,
-        //     image: this.product.image,
-        //     price: this.product.price,
-        //     rating: this.product.rating,
-        // });
-    }
+    // this.productForm.patchValue({
+    //     name: this.product.name,
+    //     image: this.product.image,
+    //     price: this.product.price,
+    //     rating: this.product.rating,
+    // });
+  }
 
-    @Input() display: boolean = false;
-    @Output() displayChange = new EventEmitter<boolean>();
+  // TODO: refactor @Input and @Output
 
-    @Input() header!: string;
+  @Input() display: boolean = false;
 
-    @Input() product: Product = {
-        name: '',
-        image: '',
-        price: '',
-        rating: 0,
+  @Output() displayChange = new EventEmitter<boolean>();
+
+  @Input() header!: string;
+
+  @Input() product: Product = {
+    name: '',
+    image: '',
+    price: '',
+    rating: 0,
+  };
+
+  @Output() confirm = new EventEmitter<Product>();
+
+  specialCharacterValidator(): ValidatorFn {
+    return (control) => {
+      const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(
+        control.value
+      );
+
+      return hasSpecialCharacter ? {hasSpecialCharacter: true} : null;
     };
+  }
 
-    @Output() confirm = new EventEmitter<Product>();
+  ngOnChanges() {
+    this.productForm.patchValue(this.product);
+  }
 
-    specialCharacterValidator(): ValidatorFn {
-        return (control) => {
-            const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(
-                control.value
-            );
+  onConfirm() {
+    const {name, image, price, rating} = this.productForm.value;
 
-            return hasSpecialCharacter ? { hasSpecialCharacter: true } : null;
-        };
-    }
+    this.confirm.emit({
+      name: name || '',
+      image: image || '',
+      price: price || '',
+      rating: rating || 0,
+    });
 
-    ngOnChanges() {
-        this.productForm.patchValue(this.product);
-    }
+    this.display = false;
+    this.displayChange.emit(this.display);
+  }
 
-    onConfirm() {
-        const { name, image, price, rating } = this.productForm.value;
-
-        this.confirm.emit({
-            name: name || '',
-            image: image || '',
-            price: price || '',
-            rating: rating || 0,
-        });
-
-        this.display = false;
-        this.displayChange.emit(this.display);
-    }
-
-    onCancel() {
-        this.display = false;
-        this.displayChange.emit(this.display);
-    }
+  onCancel() {
+    this.display = false;
+    this.displayChange.emit(this.display);
+  }
 }
