@@ -37,6 +37,13 @@ export class EditPopupComponent {
     rating: 0;
   }>();
 
+  // @Input() product: Product = {
+  //   name: '',
+  //   image: '',
+  //   price: '',
+  //   rating: 0,
+  // };
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
@@ -67,7 +74,7 @@ export class EditPopupComponent {
   }
 
   ngOnChanges() {
-    this.productForm.patchValue(this.product());
+    this.productForm.patchValue(this.product);
   }
 
   onConfirm() {
