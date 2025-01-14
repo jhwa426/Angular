@@ -5,6 +5,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-item',
+  standalone: true,
   imports: [FontAwesomeModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.scss',

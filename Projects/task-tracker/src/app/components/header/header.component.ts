@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -15,7 +16,10 @@ export class HeaderComponent implements OnInit {
   showAddTask: boolean = false;
   subscription: Subscription;
 
-  constructor(private uiService: UiService, private router: Router) {
+  constructor(
+    private uiService: UiService,
+    private router: Router,
+  ) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));

@@ -6,6 +6,7 @@ import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
   selector: 'app-tasks',
+  standalone: true,
   imports: [TaskItemComponent, AddTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
@@ -23,7 +24,7 @@ export class TasksComponent implements OnInit {
     this.taskService
       .deleteTask(task)
       .subscribe(
-        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id)),
       );
   }
 
