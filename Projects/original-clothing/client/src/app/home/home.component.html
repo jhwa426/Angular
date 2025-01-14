@@ -12,11 +12,11 @@
   <!-- Products Section -->
   <div class="row wrap gap-2 space-between">
     @for (product of products; track $index) {
-    <app-product
-      [product]="product"
-      (edit)="toggleEditPopup($event)"
-      (delete)="toggleDeletePopup($event)"
-    ></app-product>
+      <app-product
+        [product]="product"
+        (edit)="toggleEditPopup($event)"
+        (delete)="toggleDeletePopup($event)"
+      ></app-product>
     }
   </div>
 
