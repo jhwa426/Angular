@@ -12,7 +12,8 @@
     "fix:scss": "stylelint 'src/**/*.scss' --fix",
     "format": "npm run fix:ts && npm run fix:scss",
     "lists": "git branch | grep -v 'master' | grep -v 'main'",
-    "clean": "git branch | grep -v 'master' | grep -v 'main' | xargs git branch -d"
+    "clean": "git branch | grep -v 'master' | grep -v 'main' | xargs git branch -d",
+    "clean:remote": "git remote prune origin"
   },
   "private": true,
   "dependencies": {
