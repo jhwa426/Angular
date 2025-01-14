@@ -30,19 +30,19 @@ export class EditPopupComponent {
   header = input<string>();
   confirm = output<Product>();
   display = input<boolean>(false);
-  product = input.required<{
-    name: '';
-    image: '';
-    price: '';
-    rating: 0;
-  }>();
+  // product = input.required<{
+  //   name: '';
+  //   image: '';
+  //   price: '';
+  //   rating: 0;
+  // }>();
 
-  // @Input() product: Product = {
-  //   name: '',
-  //   image: '',
-  //   price: '',
-  //   rating: 0,
-  // };
+  @Input() product: Product = {
+    name: '',
+    image: '',
+    price: '',
+    rating: 0,
+  };
 
   constructor(private formBuilder: FormBuilder) {}
 
