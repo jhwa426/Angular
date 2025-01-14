@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './filters.component.scss',
 })
 export class FiltersComponent {
-  @Output() showCategory = new EventEmitter<string>();
+  showCategory = output<string>();
   // categories: string[] | undefined;
   categories = ['shoes', 'sports'];
 
