@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+  available: string = '';
 
   applyForm = new FormGroup({
     firstName: new FormControl(''),
@@ -23,10 +23,11 @@ export class DetailsComponent {
     email: new FormControl(''),
   });
 
-  constructor() {
+  constructor(private housingService: HousingService) {
     const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
     this.housingLocation =
       this.housingService.getHousingLocationById(housingLocationId);
+    this.availability();
   }
 
   submitApplication() {
@@ -35,5 +36,15 @@ export class DetailsComponent {
       this.applyForm.value.lastName ?? '',
       this.applyForm.value.email ?? ''
     );
+  }
+
+  availability() {
+    if (
+      (this.housingLocation?.wifi || this.housingLocation?.laundry) === true
+    ) {
+      this.available = 'Available';
+    } else {
+      this.available = 'Not available';
+    }
   }
 }
