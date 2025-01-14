@@ -6,6 +6,7 @@ import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-add-task',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.scss',
