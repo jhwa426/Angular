@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ng-tutorial": "node dist/ng-tutorial/server/server.mjs",
-    "local-server": "npx json-server --watch db.json"
+    "local": "npx json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
