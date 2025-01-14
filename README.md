@@ -54,7 +54,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/thecodedeck/angular-cc-1-client.git
+   git clone https://github.com/jhwa426/Angular/Projects/original-clothing/client
    ```
 
 2. Install dependencies:
@@ -113,7 +113,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thecodedeck/angular-cc-1-server.git
+   git clone https://github.com/jhwa426/Angular/Projects/original-clothing/server
    ```
 2. Install dependencies:
    ```bash
