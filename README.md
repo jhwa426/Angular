@@ -11,8 +11,12 @@
 <br />
 <br />
 
-## Angular Tutorial - 2 : Storefront FE - Crash Course
+## Angular Project - 1
+### TODO LIST: Task Tracker
 
+
+## Angular Project - 2
+### Online shopping website : Original Clothing
 <details>
 
 <!-- Client -->
@@ -136,7 +140,8 @@ This project is licensed under the MIT License.
 
 </details>
 
-## Angular Tutorial - 3 : E-commerce Store
+## Angular Project - 3 
+### E-commerce Store : Web Shop
 
 <details>
 
