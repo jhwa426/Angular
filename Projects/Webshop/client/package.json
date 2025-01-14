@@ -10,7 +10,9 @@
     "serve:ssr:Webshop": "node dist/webshop/server/server.mjs",
     "fix:ts": "eslint \"src/**/*.{js,ts}\" --fix",
     "fix:scss": "stylelint 'src/**/*.scss' --fix",
-    "format": "npm run fix:ts && npm run fix:scss"
+    "format": "npm run fix:ts && npm run fix:scss",
+    "lists": "git branch | grep -v 'master' | grep -v 'main'",
+    "clean": "git branch | grep -v 'master' | grep -v 'main' | xargs git branch -d"
   },
   "private": true,
   "dependencies": {
