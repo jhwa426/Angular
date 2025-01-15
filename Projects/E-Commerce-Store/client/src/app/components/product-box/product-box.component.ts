@@ -12,7 +12,7 @@ export class ProductBoxComponent {
 
   constructor() {}
 
-  onAddToCart(): void {
+  onAddToCart() {
     const currentProduct = this.product();
     if (currentProduct) {
       this.addToCart.emit(currentProduct);
