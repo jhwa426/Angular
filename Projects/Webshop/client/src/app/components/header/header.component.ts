@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { CurrencyPipe } from '@angular/common';
-import { CartItem } from '../../models/cart.model';
+import { CartItem } from '../../../types/app.types';
 
 @Component({
   selector: 'app-header',
