@@ -1,5 +1,4 @@
 import { Component, Input } from "@angular/core";
-
 import { CartService } from "src/app/services/cart.service";
 import { Cart, CartItem } from "src/app/types/app.types";
 
