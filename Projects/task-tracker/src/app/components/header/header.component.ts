@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ButtonComponent } from '../button/button.component';
-import { UiService } from '../../services/ui.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { UiService } from '../../services/ui.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

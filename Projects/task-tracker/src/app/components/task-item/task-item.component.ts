@@ -1,11 +1,10 @@
 import { Component, input, OnInit, output } from '@angular/core';
-import { Task } from '../../../types/app.types';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Task } from '../../../types/app.types';
 
 @Component({
   selector: 'app-task-item',
-  standalone: true,
   imports: [FontAwesomeModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.scss',
