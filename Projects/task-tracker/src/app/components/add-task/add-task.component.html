@@ -5,7 +5,7 @@
       <input
         type="text"
         name="text"
-        [(ngModel)]="text"
+        (ngModel)="(text)"
         id="text"
         placeholder="Add Task"
       />
@@ -15,7 +15,7 @@
       <input
         type="text"
         name="day"
-        [(ngModel)]="day"
+        (ngModel)="(day)"
         id="day"
         placeholder="Add Day & Time"
       />
@@ -25,7 +25,7 @@
       <input
         type="checkbox"
         name="reminder"
-        [(ngModel)]="reminder"
+        (ngModel)="(reminder)"
         id="reminder"
       />
     </div>

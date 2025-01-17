@@ -1,13 +1,10 @@
 import { Component, OnInit, output } from '@angular/core';
-import { Task } from '../../../types/app.types';
 import { Subscription } from 'rxjs';
-import { FormsModule } from '@angular/forms';
+import { Task } from '../../../types/app.types';
 import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-add-task',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.scss',
 })
