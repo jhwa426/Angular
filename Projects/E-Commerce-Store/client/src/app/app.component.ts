@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
-import { CartService } from './services/cart.service';
-import { Cart } from './types/app.types';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "./services/cart.service";
+import { Cart } from "./types/app.types";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector: "app-root",
+  templateUrl: "./app.component.html",
 })
 export class AppComponent implements OnInit {
   cart: Cart = { items: [] };
